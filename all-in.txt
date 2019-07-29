@@ -1,4 +1,4 @@
-//@by_jackd
+//@by_jackd & anhngt
 study(title="Ichimoku", shorttitle="Ichimoku", overlay=true)
 
 conversionPeriods = 9
@@ -96,3 +96,7 @@ len = input(34, minval=1, title="Length")
 src1 = input(close, title="Source")
 out = ema(src1, len)
 plot(out, color=macol, title="EMA", linewidth= 3)
+
+plot(sma(close, 50), title="50 SMA", color=#e60dbd, linewidth=2, transp=0)
+plot(sma(close, 100), title="100 SMA", color=#000000, linewidth=2, transp=0)
+plot(sma(close, 200), title="200 SMA", color=#880e4f, linewidth=2, transp=0)
