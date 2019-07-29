@@ -21,7 +21,7 @@ alertcondition(long,title="Tăng giá",message="Ichimoku jackd 🏆 cross ->> Xu
 alertcondition(short,title="Giảm giá",message="Ichimoku jackd 🏆 cross ->> Xu Hướng sắp tới ->> Giảm" )
 //plotshape(crossover(conversionLine , baseLine), style=shape.triangleup, color=red,location=location.belowbar)
 //plotshape(crossunder(conversionLine , baseLine), style=shape.triangledown, color=red,location=location.abovebar)
-plot(conversionLine, linewidth=2, color= #0496ff, transp = 20,title="Tenkan")
+plot(conversionLine, linewidth=2, color= #2196f3, transp = 20,title="Tenkan")
 plot(baseLine, color=kjuncol,linewidth=2,transp=50, title="Kijun")
 lightgreen = #4CAF50
 senkoub_color = #FF5252
@@ -91,7 +91,7 @@ adx = 100 * rma(abs(plus - minus) / (sum == 0 ? 1 : sum), lensig)
 
 macol = adx > limadx and plus > minus ? lime : adx > limadx and plus < minus ? red :black
 
-
+//MA
 len = input(34, minval=1, title="Length")
 src1 = input(close, title="Source")
 out = ema(src1, len)
@@ -100,3 +100,14 @@ plot(out, color=macol, title="EMA", linewidth= 3)
 plot(sma(close, 50), title="50 SMA", color=#e60dbd, linewidth=2, transp=0)
 plot(sma(close, 100), title="100 SMA", color=#000000, linewidth=2, transp=0)
 plot(sma(close, 200), title="200 SMA", color=#880e4f, linewidth=2, transp=0)
+
+
+//DEMA
+fastLength = input(9, minval=2, title="Fast DEMA Length")
+showFastDema = input(true, title="Show Fast DEMA")
+
+// DEMAs
+fastDema = (2 * ema(close, fastLength) - (ema(ema(close, fastLength), fastLength)))
+
+// Plots
+plot(showFastDema ? fastDema : na, title="Fast DEMA", color=#673ab7 , linewidth=2)
