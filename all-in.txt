@@ -1,5 +1,5 @@
 //@by_jackd & anhngt
-study(title="Ichimoku", shorttitle="Ichimoku", overlay=true)
+study(title="Allin", shorttitle="Allin", overlay=true)
 
 conversionPeriods = 9
 basePeriods = 26
