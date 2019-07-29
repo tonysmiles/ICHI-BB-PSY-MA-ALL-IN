@@ -110,4 +110,4 @@ showFastDema = input(true, title="Show Fast DEMA")
 fastDema = (2 * ema(close, fastLength) - (ema(ema(close, fastLength), fastLength)))
 
 // Plots
-plot(showFastDema ? fastDema : na, title="Fast DEMA", color=#673ab7 , linewidth=2)
+plot(showFastDema ? fastDema : na, title="Fast DEMA", color=#673ab7 , linewidth=2, transp=0)
